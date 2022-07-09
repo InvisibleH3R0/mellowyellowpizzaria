@@ -43,8 +43,16 @@
 }
 
 .text:last-child{
+    justify-content: right;
     font-size: 15px;
     font-weight: bold;
+}
+
+.disclaimer{
+    font-size: 10px;
+    font-weight: bold;
+    display: flex;
+    margin-top: 5px;
 }
 
 .list {
@@ -58,6 +66,31 @@
     margin: 20px;
     font-weight: 500;
     align-items: center;
+    cursor: pointer;
+}
+
+.admin{
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 15px;
+    cursor: pointer;
+    padding-bottom: 5px;
+}
+.signUp{
+    border-style: solid;
+    border-color: black;
+    padding: 5px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.login{
+    border-style: solid;
+    border-color: black;
+    padding: 5px;
+    font-size: 15px;
+    margin-left: 15px;
+    margin-right: 25px;
     cursor: pointer;
 }
 
@@ -80,6 +113,13 @@
     justify-content: center;
 }
 
+.footer{
+    display: flex;
+    justify-content: center;
+    background-color: #fbff00;
+    color: #000000;
+    font-weight: 500;
+}
 
 @media screen and (max-width: 480px) {
     .item:nth-child(2){

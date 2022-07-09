@@ -14,7 +14,7 @@ export default function Home({pizzaList, admin}) {
     <div className={styles.container}>
       <Head>
         <title>Mellow Yellow Pizzaria</title>
-        <meta name="description" content="Created by the best project team at CTU" />
+        <meta name="description" content="Created by Yellow project team at CTU" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Featured/>

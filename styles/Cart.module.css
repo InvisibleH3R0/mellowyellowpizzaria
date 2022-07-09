@@ -60,6 +60,12 @@
     margin-top: 20px;
 }
 
+.deleteButton{
+    background-color: crimson;
+    font-weight: bold;
+    margin-top: 40px;
+}
+
 .paymentMethods{
     margin-top: 10px;
     display: flex;
