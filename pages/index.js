@@ -6,6 +6,9 @@ import AddButton from "../components/AddButton";
 import Featured from "../components/Featured";
 import PizzaList from "../components/PizzaList";
 import styles from "../styles/Home.module.css";
+import Product from "../models/Product";
+import dbConnect from "../utilities/mongo";
+import mongoose from "mongoose";
 
 export default function Home({pizzaList, admin}) {
   const [close, setClose] = useState(true)
@@ -27,14 +30,16 @@ export default function Home({pizzaList, admin}) {
 export const getServerSideProps = async (ctx) =>{
   const myCookie = ctx.req?.cookies || ""
   let admin = false
+
+  await dbConnect()
   
   if(myCookie.token === process.env.TOKEN){
     admin = true
   }
-  const res = await axios.get("http://localhost:3000/api/products")
+  const res = await Product.find()
   return{
     props:{
-      pizzaList:res.data,
+      pizzaList:JSON.parse(JSON.stringify(res)),
       admin,
     }
   }
