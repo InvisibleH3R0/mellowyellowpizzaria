@@ -4,8 +4,10 @@ import { useState } from "react";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { addProduct } from "../../redux/cartSlice";
+import dbConnect from "../../utilities/mongo";
+import Product from "../../models/Product";
 
-const Product = ({ pizza }) => {
+const pizzaProduct = ({ pizza }) => {
   const [price, setPrice] = useState(pizza.prices[0]);
   const [size, setSize] = useState(0);
   const [quantity, setQuantity] = useState(1);
@@ -96,14 +98,15 @@ const Product = ({ pizza }) => {
 };
 
 export const getServerSideProps = async ({ params }) => {
-  const res = await axios.get(
-    `http://localhost:3000/api/products/${params.id}`
-  );
+
+  await dbConnect()
+
+  const res = await Product.findById(params.id)
   return {
     props: {
-      pizza: res.data,
+      pizza:JSON.parse(JSON.stringify(res)),
     },
   };
 };
 
-export default Product;
+export default pizzaProduct;

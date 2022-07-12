@@ -1,7 +1,6 @@
 import styles from "../styles/PizzaList.module.css";
 import PizzaCard from "./PizzaCard";
 
-
 const PizzaList = ({pizzaList}) => {
   return (
     <div className = {styles.container}>

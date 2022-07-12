@@ -34,7 +34,6 @@ const Cart = () => {
     }
   };
 
-
   // Custom component to wrap the PayPalButtons and handle currency changes
   const ButtonWrapper = ({ currency, showSpinner }) => {
     // usePayPalScriptReducer can be use only inside children of PayPalScriptProviders
@@ -140,14 +139,8 @@ const Cart = () => {
                     ${product.price * product.quantity}
                   </span>
                 </td>
-                <button className={styles.deleteButton}
-                //onClick={()=>removeItem(product._id)} //Not Functional
-                >
-                  Remove
-                </button>
               </tr>
             ))}
-
           </tbody>
         </table>
       </div>

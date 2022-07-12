@@ -1,5 +1,6 @@
 import axios from "axios";
 import Head from "next/head";
+import Image from "next/image";
 import { useState } from "react";
 import Add from "../components/Add";
 import AddButton from "../components/AddButton";
@@ -8,7 +9,6 @@ import PizzaList from "../components/PizzaList";
 import styles from "../styles/Home.module.css";
 import Product from "../models/Product";
 import dbConnect from "../utilities/mongo";
-import mongoose from "mongoose";
 
 export default function Home({pizzaList, admin}) {
   const [close, setClose] = useState(true)
@@ -16,7 +16,7 @@ export default function Home({pizzaList, admin}) {
     <div className={styles.container}>
       <Head>
         <title>Mellow Yellow Pizzaria</title>
-        <meta name="description" content="Created by Yellow project team at CTU" />
+        <meta name="description" content="Created by the best project team at CTU" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Featured/>
@@ -30,12 +30,13 @@ export default function Home({pizzaList, admin}) {
 export const getServerSideProps = async (ctx) =>{
   const myCookie = ctx.req?.cookies || ""
   let admin = false
-
-  await dbConnect()
   
   if(myCookie.token === process.env.TOKEN){
     admin = true
   }
+
+  await dbConnect()
+
   const res = await Product.find()
   return{
     props:{

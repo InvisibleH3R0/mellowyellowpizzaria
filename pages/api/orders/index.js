@@ -1,5 +1,6 @@
 import dbConnect from "../../../utilities/mongo"
 import Order from "../../../models/Orders"
+import Orders from "../../../models/Orders"
 
 const handler = async (req, res) => {
 const {method} = req;
