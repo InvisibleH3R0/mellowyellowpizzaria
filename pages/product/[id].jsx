@@ -7,7 +7,7 @@ import { addProduct } from "../../redux/cartSlice";
 import dbConnect from "../../utilities/mongo";
 import Product from "../../models/Product";
 
-const pizzaProduct = ({ pizza }) => {
+const PizzaProduct = ({ pizza }) => {
   const [price, setPrice] = useState(pizza.prices[0]);
   const [size, setSize] = useState(0);
   const [quantity, setQuantity] = useState(1);
@@ -109,4 +109,4 @@ export const getServerSideProps = async ({ params }) => {
   };
 };
 
-export default pizzaProduct;
+export default PizzaProduct;

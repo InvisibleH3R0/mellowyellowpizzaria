@@ -4,7 +4,7 @@ import axios from "axios";
 import dbConnect from "../../utilities/mongo";
 import Order from "../../models/Orders";
 
-const pizzaOrder = ({ order }) => {
+const PizzaOrder = ({ order }) => {
   const status = order.status;
 
   const statusClass = (index) => {
@@ -128,4 +128,4 @@ export const getServerSideProps = async ({ params }) => {
     },
   };
 };
-export default pizzaOrder;
+export default PizzaOrder;
