@@ -21,14 +21,16 @@ const Navbar = () => {
                 <Image src= "/img/phone.png" alt="" width="32" height="32"></Image>
             </div>
                 <div className={styles.texts}>
-                  <div className={styles.text}>ORDER NOW!</div>
+                  <div className={styles.name}>Mellow Yellow Pizzaria</div>
                   <div className={styles.text}>832-386-8463</div>
                   <div className={styles.disclaimer}>DISCLAIMER: Not an actual restuarant! School Project</div>
                 </div>
             </div>
             <div className = {styles.item}>
                 <ul className = {styles.list}>
-                <Image src="/img/pizzaLogo.png" alt="" width="135px" height="85px" />
+                    <li className = {styles.imgContainer}>
+                <Image src="/img/coolPizza.png" alt="" width="135px" height="85px" />
+                </li>
                 <Link href="/" passHref>
                     <li className = {styles.listItem}>Home</li>
                 </Link>
@@ -37,7 +39,7 @@ const Navbar = () => {
                 <Link href="/Contact" passHref>
                     <li className = {styles.listItem}>Contact</li>
                 </Link>
-                <Image src="/img/pizzaLogo.png" alt="" width="135px" height="85px" />
+                <Image src="/img/coolPizza.png" alt="" width="135px" height="85px" />
                 </ul>
             </div>
             <Link href="/cart" passHref>

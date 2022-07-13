@@ -13,7 +13,6 @@
 .item:last-child{
     flex: 2;
     padding: 50px;
-    justify-content: space-between; 
 }
 
 .card{
@@ -41,6 +40,10 @@
     }
 
     .item:first-child{
+        display: none;
+    }
+
+    .item:last-child{
         display: none;
     }
 
