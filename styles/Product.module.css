@@ -3,6 +3,10 @@
     display: flex;
 }
 
+.active{
+    background-color: yellow;
+}
+
 .left{
     flex: 1;
     height: 100%;

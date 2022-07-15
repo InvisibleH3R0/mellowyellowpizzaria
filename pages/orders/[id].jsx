@@ -4,8 +4,21 @@ import axios from "axios";
 import dbConnect from "../../utilities/mongo";
 import Order from "../../models/Orders";
 
+
 const PizzaOrder = ({ order }) => {
   const status = order.status;
+  const taxes = order.total * .0625;
+  const total = order.total + taxes;
+  
+  const formatTaxes = new Intl.NumberFormat(`en-US`, {
+    currency: `USD`,
+    style: `currency`,
+  }).format(taxes)
+
+  const amount = new Intl.NumberFormat(`en-US`, {
+    currency: `USD`,
+    style: `currency`,
+  }).format(total)
 
   const statusClass = (index) => {
     if (index - status < 1) return styles.done;
@@ -26,7 +39,7 @@ const PizzaOrder = ({ order }) => {
             </tr>
             <tr className={styles.tr}>
               <td>
-                <span className={styles.id}>{order._id}</span>
+                <span className={styles.id}>{order._id.slice(0,10)}...</span>
               </td>
               <td>
                 <span className={styles.name}>{order.customer}</span>
@@ -100,16 +113,20 @@ const PizzaOrder = ({ order }) => {
         <div className={styles.wrapper}>
           <h2 className={styles.title}>CART TOTAL</h2>
           <div className={styles.totalText}>
-            <b className={styles.totalTextTitle}>Subtotal:</b>${order.total}
+          <b className={styles.totalTextTitle}>Subtotal:</b>${order.total}
           </div>
           <div className={styles.totalText}>
-            <b className={styles.totalTextTitle}>Discount:</b>$0.00
+            <b className={styles.totalTextTitle}>Taxes: </b>{formatTaxes}
           </div>
           <div className={styles.totalText}>
-            <b className={styles.totalTextTitle}>Total:</b>${order.total}
+            <b className={styles.totalTextTitle}>Total:</b>{amount}
           </div>
           <button disabled className={styles.button}>
             PAID
+          </button>
+          <button className={styles.button}
+                   onClick={() => window.print()}>
+            Print Receipt
           </button>
         </div>
       </div>

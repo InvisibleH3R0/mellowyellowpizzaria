@@ -149,3 +149,13 @@
     }
 
 }
+
+
+@media print {
+    .row:last-child{
+        display: none;
+    }
+    #print-content{
+        display:contents;
+    }
+}

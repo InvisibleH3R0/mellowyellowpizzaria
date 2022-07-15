@@ -11,7 +11,7 @@ const Login = () => {
 
   const handleClick = async () => {
     try {
-      await axios.post("http://localhost:3000/api/kitchenLogin", {
+      await axios.post("/api/kitchenLogin", {
         username,
         password,
       });

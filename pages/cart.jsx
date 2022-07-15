@@ -16,7 +16,20 @@ const Cart = () => {
   const cart = useSelector((state) => state.cart);
   const [open, setOpen] = useState(false);
   const [cash, setCash] = useState(false);
-  const amount = cart.total;
+  const taxes = cart.total * .0625;
+  const total = cart.total + taxes;
+  
+  const formatTaxes = new Intl.NumberFormat(`en-US`, {
+    currency: `USD`,
+    style: `currency`,
+  }).format(taxes)
+
+  const amount = new Intl.NumberFormat(`en-US`, {
+    currency: `USD`,
+    style: `currency`,
+  }).format(total)
+  
+  const paypalAmount = Math.round(total * 100)/100
   const currency = "USD";
   const style = { layout: "vertical" };
   const dispatch = useDispatch();
@@ -65,7 +78,7 @@ const Cart = () => {
                   {
                     amount: {
                       currency_code: currency,
-                      value: amount,
+                      value: paypalAmount,
                     },
                   },
                 ],
@@ -102,7 +115,7 @@ const Cart = () => {
               <th>Extras</th>
               <th>Price</th>
               <th>Quantity</th>
-              <th>Total</th>
+              <th>Total (Before Tax)</th>
             </tr>
           </tbody>
           <tbody>
@@ -151,10 +164,10 @@ const Cart = () => {
             <b className={styles.totalTextTitle}>Subtotal:</b>${cart.total}
           </div>
           <div className={styles.totalText}>
-            <b className={styles.totalTextTitle}>Discount:</b>$0.00
+            <b className={styles.totalTextTitle}>Taxes: </b>{formatTaxes}
           </div>
           <div className={styles.totalText}>
-            <b className={styles.totalTextTitle}>Total:</b>${cart.total}
+            <b className={styles.totalTextTitle}>Total:</b>{amount}
           </div>
           {open ? (
             <div className={styles.paymentMethods}>

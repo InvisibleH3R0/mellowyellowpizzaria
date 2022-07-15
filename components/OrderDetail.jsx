@@ -15,7 +15,7 @@ const OrderDetail = ({ total, createOrder }) => {
       <div className={styles.wrapper}>
         <h1 className={styles.title}>$10 Delivery Fee Applies.</h1>
         <div className={styles.item}>
-          <label className={styles.label}>Name Surname</label>
+          <label className={styles.label}>Full Name</label>
           <input
             placeholder="Jimothy Smith"
             type="text"

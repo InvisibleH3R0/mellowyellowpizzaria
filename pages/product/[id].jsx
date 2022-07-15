@@ -22,6 +22,7 @@ const PizzaProduct = ({ pizza }) => {
     const difference = pizza.prices[sizeIndex] - pizza.prices[size];
     setSize(sizeIndex);
     changePrice(difference);
+
   };
 
   const handleChange = (e, option) => {
@@ -53,7 +54,8 @@ const PizzaProduct = ({ pizza }) => {
         <p className={styles.desc}>{pizza.desc}</p>
         <h3 className={styles.choose}>Choose the size</h3>
         <div className={styles.sizes}>
-          <div className={styles.size} onClick={() => handleSize(0)}>
+          <div className={styles.size}
+           onClick={() => handleSize(0)}>
             <Image src="/img/size.png" layout="fill" alt="" />
             <span className={styles.number}>Small</span>
           </div>
@@ -86,6 +88,7 @@ const PizzaProduct = ({ pizza }) => {
             onChange={(e) => setQuantity(e.target.value)}
             type="number"
             defaultValue={1}
+            min = "1"
             className={styles.quantity}
           />
           <button className={styles.button} onClick={handleClick}>

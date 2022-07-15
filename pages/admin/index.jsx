@@ -107,7 +107,7 @@ const Index = ({orders,products}) => {
                 {orderList.map(order=>(            
                 <tbody key={order._id}>
                     <tr className={styles.trTitle}>
-                        <td>{order._id.slice(0,5)}...</td>
+                        <td>{order._id.slice(0,10)}...</td>
                         <td>{order.customer}</td>
                         <td>${order.total}</td>
                         <td>{order.method === 0 ? (<span>cash</span>) : (<span>paid</span>)}
