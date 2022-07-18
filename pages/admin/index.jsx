@@ -57,7 +57,6 @@ const Index = ({orders,products}) => {
                 <tbody>
                     <tr className={styles.trTitle}>
                         <th>Image</th>
-                        <th>Id</th>
                         <th>Title</th>
                         <th>Price</th>
                         <th>Action</th>
@@ -75,7 +74,6 @@ const Index = ({orders,products}) => {
                                alt=""
                                />
                         </td>
-                        <td>{product._id.slice(0,5)}...</td>
                         <td>{product.title}</td>
                         <td>${product.prices[0]}</td>
                         <td>

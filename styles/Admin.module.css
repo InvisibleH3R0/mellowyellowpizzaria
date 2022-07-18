@@ -1,6 +1,9 @@
 .container{
-    padding: 50px;
+    height: 100%;
+    padding: 25px;
     display: flex;
+    margin-bottom: 260px;
+    background-color: black;
 }
 
 .item{
@@ -11,6 +14,15 @@
     width: 100%;
     border-spacing: 20px;
     text-align-last: left;
+    
+}
+
+.title{
+    color: yellow;
+}
+
+.trTitle{
+    color: yellow;
 }
 
 .button{
@@ -27,4 +39,5 @@
 
 .button:last-child{
     background-color: crimson;
+    margin-left: 10px;
 }

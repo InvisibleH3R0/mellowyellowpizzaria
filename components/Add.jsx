@@ -86,6 +86,7 @@ const Add = ({ setClose }) => {
               className={`${styles.input} ${styles.inputSm}`}
               type="number"
               placeholder="Small"
+              min="1"
               onChange={(e) => changePrice(e, 0)}
             />
             <input

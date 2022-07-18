@@ -21,7 +21,7 @@ const Navbar = () => {
                 <Image src= "/img/phone.png" alt="" width="32" height="32"></Image>
             </div>
                 <div className={styles.texts}>
-                  <div className={styles.name}>Mellow Yellow Pizzaria</div>
+                  <div className={styles.name}>Mellow Yellow Pizzeria</div>
                   <div className={styles.text}>832-386-8463</div>
                   <div className={styles.disclaimer}>DISCLAIMER: Not an actual restuarant! School Project</div>
                 </div>
@@ -42,16 +42,19 @@ const Navbar = () => {
                 <Image src="/img/coolPizza.png" alt="" width="135px" height="85px" />
                 </ul>
             </div>
-            <Link href="/cart" passHref>
             <div className = {styles.item}>
             <div className = {styles.signUp}>Sign Up</div> 
+            <Link href="/customer/customerLogin" passHref>
                 <div className = {styles.login}>Login</div> 
+                </Link>
+            <Link href="/cart" passHref>
                 <div className = {styles.cart}>
                 <a><Image src="/img/cart.png" alt="" width="30px" height="30px" /></a>
                 <div className = {styles.counter}>{quantity}</div>
                 </div>
+                </Link>
             </div>
-            </Link>
+            
             
         </div>
     )

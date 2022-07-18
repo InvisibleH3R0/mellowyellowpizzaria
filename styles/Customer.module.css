@@ -1,0 +1,35 @@
+.container{
+    padding: 25px;
+    display: flex;
+    margin-bottom: 260px;
+}
+
+.item{
+    flex: 1;
+    color: rgb(182, 182, 77);
+}
+
+.table{
+    width: 100%;
+    text-align-last: left;
+}
+
+.title{
+    color: yellow;
+}
+
+.trTitle{
+    color: rgb(182, 182, 77);
+}
+
+
+
+.button{
+    border-style: solid;
+    border-color: rgb(182, 182, 77);
+    background-color: rgb(24, 26, 19);
+    color: rgb(182, 182, 77);
+    font-weight: bold;
+    margin-right: 10px;
+}
+

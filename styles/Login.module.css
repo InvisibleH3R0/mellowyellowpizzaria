@@ -8,6 +8,7 @@
 .wrapper{
     display: flex;
     flex-direction: column;
+    color: yellow;
 }
 
 .input{
@@ -15,6 +16,8 @@
     height: 40px;
     padding: 0px 10px;
 }
+
+
 
 .button{
     height: 40px;
