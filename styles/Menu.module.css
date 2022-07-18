@@ -1,0 +1,40 @@
+.container{
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-style: solid;
+    border-color: yellow;
+}
+
+.title{
+    display:none;
+    color: yellow;
+    font-style: italic;
+}
+
+.desc{
+    font-size: 24px;
+    font-weight: 620;
+    color: yellow;
+    width: 70%;
+}
+
+.wrapper{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+@media screen and (max-width: 480px) {
+    .title{
+        text-align: center;
+    }
+
+    .desc{
+        width: 90%;
+        text-align: center;
+    }
+  }

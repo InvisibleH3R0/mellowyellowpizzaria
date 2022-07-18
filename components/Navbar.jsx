@@ -34,8 +34,9 @@ const Navbar = () => {
                 <Link href="/" passHref>
                     <li className = {styles.listItem}>Home</li>
                 </Link>
- 
+                <Link href="/menu" passHref>
                     <li className = {styles.listItem}>Menu</li> 
+                </Link>
                 <Link href="/Contact" passHref>
                     <li className = {styles.listItem}>Contact</li>
                 </Link>
